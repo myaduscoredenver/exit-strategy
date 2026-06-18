@@ -145,6 +145,17 @@
             border: 3px solid #1a3a66;
         }
         
+        @media (max-width: 600px) {
+            .quiz-section {
+                border: none;
+                padding: 2rem 1.5rem;
+                margin: 0;
+                border-radius: 0;
+                box-shadow: none;
+                background: white;
+            }
+        }
+        
         .quiz-section h2 {
             text-align: center;
             margin-bottom: 0.5rem;
@@ -234,11 +245,10 @@
         }
         
         .result-box {
-            background: #e8f0f8;
-            border: 2px solid #1a3a66;
-            padding: 2rem;
-            border-radius: 4px;
-            margin-top: 2rem;
+            background: white;
+            border: none;
+            padding: 0;
+            margin: 2rem 0;
             display: none;
         }
         
@@ -246,9 +256,115 @@
             display: block;
         }
         
-        .result-box h3 {
+        .result-bubble {
+            background: white;
+            border: 2px solid #1a3a66;
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .result-bubble.header {
+            background: linear-gradient(135deg, #1a3a66 0%, #2c5aa0 100%);
+            color: white;
+            border: none;
+            font-size: 1.4rem;
+            font-weight: bold;
+            text-align: center;
+        }
+        
+        .result-bubble:nth-child(2) {
+            background: linear-gradient(135deg, #e8f0f8 0%, #f0f5fb 100%);
+            border-color: #2c5aa0;
+            border-left: 5px solid #2c5aa0;
+        }
+        
+        .result-bubble:nth-child(3) {
+            background: linear-gradient(135deg, #e8f5f5 0%, #f0fbfb 100%);
+            border-color: #1a7f7f;
+            border-left: 5px solid #1a7f7f;
+        }
+        
+        .result-bubble:nth-child(4) {
+            background: linear-gradient(135deg, #f5f0e8 0%, #fbf8f0 100%);
+            border-color: #8b6914;
+            border-left: 5px solid #8b6914;
+        }
+        
+        .result-bubble.cta {
+            background: linear-gradient(135deg, #1a3a66 0%, #2c5aa0 100%);
+            color: white;
+            border: none;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        .result-bubble.cta p {
+            margin: 0.5rem 0;
+            color: white;
+        }
+        
+        .result-bubble.cta .phone {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 1rem 0;
+            color: white;
+        }
+        
+        .result-bubble.cta a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 4px;
+            margin-top: 0.5rem;
+        }
+        
+        .result-bubble.cta a:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        .result-bubble ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .result-bubble li {
+            padding: 0.5rem 0;
+            margin: 0;
+        }
+        
+        .result-bubble li:before {
+            content: "→ ";
+            font-weight: bold;
             color: #1a3a66;
-            margin-top: 0;
+            margin-right: 0.5rem;
+        }
+        
+        @media (max-width: 600px) {
+            .result-bubble {
+                padding: 1.5rem;
+                margin: 1rem 0;
+                font-size: 1rem;
+            }
+            
+            .result-bubble.header {
+                font-size: 1.2rem;
+            }
+        }
+        
+        /* Deprecated - keeping for reference */
+        .result-section {
+            display: none;
+        }
+        
+        .result-box h3 {
+            display: none;
         }
         
         /* Situation Boxes */
@@ -775,18 +891,18 @@
             
             <p>Expert real estate guidance for buyers and sellers across Boulder County and the greater Denver metro area.</p>
             
-            <div class="stats-section" style="background: #f0f5fb; margin: 2rem 0;">
+            <div class="stats-section" style="background: linear-gradient(135deg, #e8f0f8 0%, #f0f5fb 100%); margin: 2rem 0; padding: 2rem; border-radius: 8px; border: 2px solid #1a3a66;">
                 <div class="stats">
                     <div>
-                        <div class="stat">120+</div>
+                        <div class="stat" style="color: #1a3a66;">120+</div>
                         <div class="stat-label">Transactions</div>
                     </div>
                     <div>
-                        <div class="stat">$70M+</div>
+                        <div class="stat" style="color: #2c5aa0;">$70M+</div>
                         <div class="stat-label">Sales Volume</div>
                     </div>
                     <div>
-                        <div class="stat">5.0★</div>
+                        <div class="stat" style="color: #1a7f7f;">5.0★</div>
                         <div class="stat-label">Client Rating</div>
                     </div>
                 </div>
@@ -892,41 +1008,79 @@
             // Submit quiz data via email
             submitQuizData(priority, timeline, condition, ownership, concern);
             
-            let message = '';
-            
+            // Generate goal text
+            let goalText = '';
             if (priority === 'cash') {
-                message = '<strong>You want maximum profit:</strong> This is about timing and execution. Sell when the market is strong, price it right, and negotiate well. James shows you the market data and positioning to get top dollar. Timeline matters—selling in the next 6-12 months is very different than 2-3 years out.';
+                goalText = 'Maximize Profit';
             } else if (priority === 'income') {
-                message = '<strong>You want ongoing income:</strong> Consider keeping it as a rental or extracting equity to invest elsewhere. James analyzes the numbers: Will it cash flow? Is it a good rental market in your neighborhood? Are there better uses for your equity?';
+                goalText = 'Create Income';
             } else if (priority === 'legacy') {
-                message = '<strong>You want to help your family:</strong> There are multiple paths—selling and gifting proceeds, passing it on with proper planning, extracting equity to help kids with down payments. Each has different implications. James walks you through the scenarios.';
+                goalText = 'Help Your Family';
             } else if (priority === 'simplify') {
-                message = '<strong>You want a simpler life:</strong> Downsizing is the most common path. Sell the big house, buy something smaller, unlock equity. James helps you find the right move and timing to maximize your outcome.';
+                goalText = 'Simplify Life';
             }
             
-            message += '<br><br><strong>Your situation:</strong> ';
-            if (condition === 'excellent') {
-                message += 'Your home is in great shape, which gives you flexibility. You can sell quickly or hold longer.';
-            } else if (condition === 'good') {
-                message += 'Your home is solid. Some selective improvements could help, but nothing major is necessary.';
-            } else if (condition === 'needs-work') {
-                message += 'Your home has potential. James will help you decide: fix key items, or find a buyer who wants the project as-is.';
-            } else if (condition === 'unsure') {
-                message += 'Not sure where you stand—that\'s exactly what a consultation helps clarify.';
-            }
-            
-            message += '<br><br><strong>Your timeline:</strong> ';
+            // Generate timeline text
+            let timelineText = '';
+            let actionItems = [];
             if (timeline === '6months') {
-                message += 'Acting soon means you need to move fast. James helps with pricing, staging, and marketing to capture buyer interest immediately.';
+                timelineText = '6 Months — Start Prepping Now';
+                actionItems = [
+                    'Get a home inspection (know what needs fixing)',
+                    'Research comparable homes in your target area',
+                    'Start packing non-essentials',
+                    'Think about what you want in your next home'
+                ];
             } else if (timeline === '1year') {
-                message += 'A year gives you breathing room to plan, market your home effectively, and catch the right season.';
+                timelineText = '1 Year — Perfect Window';
+                actionItems = [
+                    'Start visualizing your next chapter',
+                    'Research neighborhoods you\'re considering',
+                    'Get your home professionally appraised',
+                    'Explore financing options for your next purchase'
+                ];
             } else if (timeline === '2years') {
-                message += '2-3 years is ideal planning time. You can prepare your home, understand market trends, and act when conditions are best.';
+                timelineText = '2-3 Years — Plenty of Time';
+                actionItems = [
+                    'Watch market trends (don\'t panic, you have time)',
+                    'Explore different neighborhoods without pressure',
+                    'Make selective improvements if they truly matter',
+                    'Plan the lifestyle you want in your next home'
+                ];
             } else if (timeline === 'exploring') {
-                message += 'You\'re exploring—that\'s exactly why a free consultation helps. James shows you what\'s possible so you can decide on your timeline.';
+                timelineText = 'Just Exploring — No Rush';
+                actionItems = [
+                    'Start asking yourself: What would simplify my life?',
+                    'Talk to friends who\'ve downsized (learn from them)',
+                    'Research what\'s available in your price range',
+                    'Schedule a conversation with James (no obligation)'
+                ];
             }
             
-            message += '<br><br><strong>Next step:</strong> Schedule a free consultation with James. He\'ll listen to your situation and show you the actual options for your home and your goals.';
+            let actionHTML = actionItems.map(item => `<li>${item}</li>`).join('');
+            
+            let message = `
+                <div class="result-bubble header">Great! Here's the Plan...</div>
+                
+                <div class="result-bubble">
+                    <strong>GOAL: ${goalText}</strong>
+                </div>
+                
+                <div class="result-bubble">
+                    <strong>Timeline: ${timelineText}</strong>
+                </div>
+                
+                <div class="result-bubble">
+                    <strong>Next Steps:</strong>
+                    <ul>${actionHTML}</ul>
+                </div>
+                
+                <div class="result-bubble cta">
+                    <p>Ready to move forward?</p>
+                    <p><strong>Call James for a free, no-obligation consultation.</strong></p>
+                    <a href="tel:7203406743" class="phone">720-340-6743</a>
+                </div>
+            `;
             
             resultText.innerHTML = message;
             resultBox.classList.add('show');
