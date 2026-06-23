@@ -389,6 +389,52 @@
             margin-bottom: 0;
         }
         
+        /* Color variations for each situation box */
+        .content-block .situation-box:nth-child(2) {
+            background: linear-gradient(135deg, #fef5e7 0%, #fef9f0 100%);
+            border-left-color: #d4af37;
+        }
+        
+        .content-block .situation-box:nth-child(2) h3 {
+            color: #b8860b;
+        }
+        
+        .content-block .situation-box:nth-child(3) {
+            background: linear-gradient(135deg, #e0f5f4 0%, #e8faf9 100%);
+            border-left-color: #1a7f7f;
+        }
+        
+        .content-block .situation-box:nth-child(3) h3 {
+            color: #0d5c5c;
+        }
+        
+        .content-block .situation-box:nth-child(4) {
+            background: linear-gradient(135deg, #f4e7f5 0%, #faf0fb 100%);
+            border-left-color: #7b3ff2;
+        }
+        
+        .content-block .situation-box:nth-child(4) h3 {
+            color: #5a1a99;
+        }
+        
+        .content-block .situation-box:nth-child(5) {
+            background: linear-gradient(135deg, #ffe8d6 0%, #fff0e6 100%);
+            border-left-color: #d2691e;
+        }
+        
+        .content-block .situation-box:nth-child(5) h3 {
+            color: #8b4513;
+        }
+        
+        .content-block .situation-box:nth-child(6) {
+            background: linear-gradient(135deg, #fce4d8 0%, #ffeae0 100%);
+            border-left-color: #ff6b35;
+        }
+        
+        .content-block .situation-box:nth-child(6) h3 {
+            color: #cc3300;
+        }
+        
         /* Case Studies */
         .case-study {
             background: #f9f9f9;
@@ -649,137 +695,89 @@
     
     <div class="hero">
         <div class="hero-content">
-            <h1>You Made a Fortune.<br>Now What?</h1>
-            <p class="subheading">Strategic Exit Planning for Long-Term Colorado Homeowners</p>
-            <p class="description">You bought your home 15+ years ago. You watched it appreciate steadily. Now you have significant equity. But what's your next move? Sell? Hold? Rent it out? Pass it to your kids? Extract equity? There's no one right answer—but there is a right answer for YOUR situation.</p>
+            <h1>Stop Maintaining<br>a House You've Outgrown</h1>
+            <p class="subheading">Is It Time to Simplify?</p>
+            <p class="description">You've owned your home for 15+ years. You know every repair, every maintenance bill, every season's yard work. The question isn't whether you love the house anymore—it's whether you still want to maintain it. If the answer is no, it might be time to move.</p>
         </div>
     </div>
     
     <div class="container">
-        <!-- Stats Section -->
+        <!-- Pain Points Section -->
         <div class="stats-section">
-            <h2>Your Home's Story</h2>
+            <h2>Does This Sound Familiar?</h2>
             <div class="stats">
                 <div>
-                    <div class="stat">15+</div>
-                    <div class="stat-label">Years of Ownership</div>
+                    <div class="stat" style="font-size: 2rem;">🏠</div>
+                    <div class="stat-label">Constant repairs & maintenance</div>
                 </div>
                 <div>
-                    <div class="stat">3-4x</div>
-                    <div class="stat-label">Likely Home Value Appreciation</div>
+                    <div class="stat" style="font-size: 2rem;">💰</div>
+                    <div class="stat-label">Rising property taxes & utilities</div>
                 </div>
                 <div>
-                    <div class="stat">$100k-$500k+</div>
-                    <div class="stat-label">Equity in Your Home</div>
+                    <div class="stat" style="font-size: 2rem;">😮‍💨</div>
+                    <div class="stat-label">Too much house to manage</div>
                 </div>
             </div>
-            <p>You're not just a homeowner. You're someone who built real wealth. The question is: what do you do with it?</p>
+            <p>You're not alone. Most long-term homeowners reach a point where the house feels more like a burden than an asset. The good news? You have options. And James can help you explore them.</p>
         </div>
         
         <!-- Quiz Section -->
         <div class="quiz-section">
-            <h2>What's Your Best Move?</h2>
-            <p style="text-align: center; margin-bottom: 2rem;">Answer a few quick questions to explore your options.</p>
+            <h2>Should You Sell Now?</h2>
+            <p style="text-align: center; margin-bottom: 2rem;">3 quick questions to help you decide.</p>
             
             <div class="quiz-container">
-                <div class="quiz-progress">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">5</span></div>
+                <div class="quiz-progress">Question <span id="currentQuestion">1</span> of <span id="totalQuestions">3</span></div>
                 <div class="progress-bar">
                     <div class="progress-fill" id="progressFill"></div>
                 </div>
                 
                 <div class="question" id="q1">
-                    <div class="question-text">What matters most to you right now?</div>
+                    <div class="question-text">How do you feel about maintaining your home?</div>
                     <div class="option">
-                        <input type="radio" id="q1a" name="priority" value="cash">
-                        <label for="q1a">Unlocking cash / maximizing profit</label>
+                        <input type="radio" id="q1a" name="priority" value="tired">
+                        <label for="q1a">Tired of it. Ready to move on.</label>
                     </div>
                     <div class="option">
-                        <input type="radio" id="q1b" name="priority" value="income">
-                        <label for="q1b">Creating ongoing income</label>
+                        <input type="radio" id="q1b" name="priority" value="neutral">
+                        <label for="q1b">It's okay, but not ideal</label>
                     </div>
                     <div class="option">
-                        <input type="radio" id="q1c" name="priority" value="legacy">
-                        <label for="q1c">Passing something to my kids</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" id="q1d" name="priority" value="simplify">
-                        <label for="q1d">Simplifying my life</label>
+                        <input type="radio" id="q1c" name="priority" value="happy">
+                        <label for="q1c">I like my home and want to stay</label>
                     </div>
                 </div>
                 
                 <div class="question" id="q2">
-                    <div class="question-text">Are you thinking about this move in the next:</div>
+                    <div class="question-text">When are you thinking about this?</div>
                     <div class="option">
-                        <input type="radio" id="q2a" name="timeline" value="6months">
-                        <label for="q2a">6 months</label>
+                        <input type="radio" id="q2a" name="timeline" value="soon">
+                        <label for="q2a">Within the next year</label>
                     </div>
                     <div class="option">
-                        <input type="radio" id="q2b" name="timeline" value="1year">
-                        <label for="q2b">1 year</label>
+                        <input type="radio" id="q2b" name="timeline" value="eventually">
+                        <label for="q2b">In 2-3 years</label>
                     </div>
                     <div class="option">
-                        <input type="radio" id="q2c" name="timeline" value="2years">
-                        <label for="q2c">2-3 years</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" id="q2d" name="timeline" value="exploring">
-                        <label for="q2d">Just exploring (no timeline)</label>
+                        <input type="radio" id="q2c" name="timeline" value="exploring">
+                        <label for="q2c">Just exploring options</label>
                     </div>
                 </div>
                 
                 <div class="question" id="q3">
-                    <div class="question-text">What's the condition of your home?</div>
+                    <div class="question-text">What would you do with the money?</div>
                     <div class="option">
-                        <input type="radio" id="q3a" name="condition" value="excellent">
-                        <label for="q3a">Well-maintained, move-in ready</label>
+                        <input type="radio" id="q3a" name="concern" value="downsize">
+                        <label for="q3a">Move to something smaller/easier</label>
                     </div>
                     <div class="option">
-                        <input type="radio" id="q3b" name="condition" value="good">
-                        <label for="q3b">Good condition, some updates needed</label>
+                        <input type="radio" id="q3b" name="concern" value="travel">
+                        <label for="q3b">Travel, relax, enjoy retirement</label>
                     </div>
                     <div class="option">
-                        <input type="radio" id="q3c" name="condition" value="needs-work">
-                        <label for="q3c">Older home, needs significant work</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" id="q3d" name="condition" value="unsure">
-                        <label for="q3d">Not sure where to start</label>
-                    </div>
-                </div>
-                
-                <div class="question" id="q4">
-                    <div class="question-text">How long have you owned your home?</div>
-                    <div class="option">
-                        <input type="radio" id="q4a" name="ownership" value="5-10">
-                        <label for="q4a">5-10 years</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" id="q4b" name="ownership" value="10-20">
-                        <label for="q4b">10-20 years</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" id="q4c" name="ownership" value="20plus">
-                        <label for="q4c">20+ years</label>
-                    </div>
-                </div>
-                
-                <div class="question" id="q5">
-                    <div class="question-text">What's your main concern right now?</div>
-                    <div class="option">
-                        <input type="radio" id="q5a" name="concern" value="overwhelmed">
-                        <label for="q5a">Overwhelmed—too many decisions</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" id="q5b" name="concern" value="timing">
-                        <label for="q5b">Not sure if NOW is the right time</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" id="q5c" name="concern" value="value">
-                        <label for="q5c">Worried about what my home is worth</label>
-                    </div>
-                    <div class="option">
-                        <input type="radio" id="q5d" name="concern" value="process">
-                        <label for="q5d">Don't know what the process looks like</label>
+                        <input type="radio" id="q3c" name="concern" value="help">
+                        <label for="q3c">Help family or invest</label>
                     </div>
                 </div>
                 
@@ -792,61 +790,51 @@
             </div>
         </div>
         
-        <!-- No Matter Your Situation Section -->
+        <!-- Whatever Your Situation Section -->
         <div class="content-block">
-            <h2>No Matter Your Situation, James Can Help</h2>
+            <h2>Whatever Your Situation, James Is Your Guide</h2>
             
-            <p><strong>Every person's exit strategy is different.</strong> And that's where most agents get it wrong. They try to push you toward a sale because that's how they get paid. James helps you figure out what actually makes sense for YOUR life.</p>
+            <p>You're thinking about your home. But you're not sure what that means yet. Maybe you want to sell. Maybe you want to rent it. Maybe you want to help your kids or extract equity. Or maybe you're just exploring.</p>
+            
+            <p><strong>Here's what James does:</strong></p>
             
             <div class="situation-box">
-                <h3>Want to Maximize Profit?</h3>
-                <p>James will show you the timing strategy—when to sell to capture market strength, what improvements actually move the needle, and how market trends in Boulder County affect your price. He knows what's coming development-wise, so you're selling at the right moment.</p>
+                <h3>Thinking of Selling & Downsizing?</h3>
+                <p>James shows you the market, handles the process, helps you find what's next. He connects you with contractors, inspectors, and other professionals you actually trust.</p>
             </div>
             
             <div class="situation-box">
                 <h3>Want to Keep It as Rental Income?</h3>
-                <p>Not every property is a good rental. James analyzes: tenant demand, appreciation potential, rental income vs. your carrying costs, tax implications. He'll be honest if your home is better as a rental or if selling makes more sense.</p>
+                <p>He analyzes if it actually makes sense. Most homes aren't good rentals. If yours is, great. If not, he tells you.</p>
             </div>
             
             <div class="situation-box">
-                <h3>Want to Pass It to Your Kids?</h3>
-                <p>There are important considerations when passing on a property. Sell now vs. pass it on? What makes sense for your family? James talks you through the tradeoffs so your kids aren't stuck with a property they don't want or can't afford to keep.</p>
+                <h3>Considering Passing It to Your Kids?</h3>
+                <p>James walks you through the tradeoffs so they're not stuck with a property they don't want or can't afford to keep.</p>
             </div>
             
             <div class="situation-box">
                 <h3>Want to Extract Equity Without Selling?</h3>
-                <p>A cash-out refinance? A reverse mortgage? Renting part of your property (ADU)? Downsizing to a smaller property and keeping a second home? James explores every option, not just the one that generates a commission.</p>
+                <p>Refinance? Reverse mortgage? Downsize and keep a second home? James explores every option and explains the implications.</p>
             </div>
             
             <div class="situation-box">
-                <h3>Don't Know What You Want?</h3>
-                <p>That's the most common situation. You have options, but you're not sure which one is right. James talks through scenarios with you, shows you the financial impact, answers your questions—as many as you have—until you feel confident in your direction.</p>
+                <h3>Not Sure Which Path?</h3>
+                <p>That's the most common situation. James helps you understand the numbers, implications, and tradeoffs until you feel confident in your direction.</p>
             </div>
-            
-            <p style="margin-top: 2.5rem; font-size: 1.15rem; color: #0f2340; font-weight: bold;">The bottom line: James has worked with every type of exit strategy. Whatever you're considering, he knows how to help you execute it well.</p>
         </div>
         
-        <!-- Prioritization Section -->
+        <!-- Why Now Section -->
         <div class="content-block">
-            <h2>The Home Improvement Dilemma: What Actually Matters?</h2>
+            <h2>Why Now Might Be the Right Time</h2>
             
-            <p>Here's what happens: You decide to sell (or think about selling), and suddenly you see <strong>fifty things</strong> that need fixing. The roof, the kitchen, the bathrooms, the paint, the landscaping, the fence. The list is endless.</p>
-            
-            <p>And you're stuck wondering: <strong>Do I have to fix all of this? Or can I sell as-is?</strong></p>
-            
-            <p>The answer is: <strong>It depends.</strong> And that's where most sellers get lost.</p>
-            
-            <div class="situation-box">
-                <h3>Here's What James Does</h3>
-                <p>He looks at your house. He looks at your market. He looks at your situation. Then he prioritizes for you.</p>
-                <p><strong>Some improvements actually pay for themselves.</strong> A fresh coat of paint, new flooring in the kitchen, updated bathroom fixtures—these catch buyer attention and move the needle on price. James knows which ones are worth doing.</p>
-                <p><strong>Some improvements are just expensive.</strong> A new roof, foundation work, major electrical updates—these are necessary to disclose, but they won't help you sell for more. Why spend $15,000 on a new roof if buyers are only going to negotiate down anyway? James helps you decide.</p>
-                <p><strong>Some homes sell better as-is.</strong> If your house is older, or in rough condition, there are buyers who actually want the "project." They want to renovate it their way. James knows how to find those buyers and sell faster without doing expensive fixes.</p>
+            <div style="background: linear-gradient(135deg, #fff8e8 0%, #fffaf0 100%); padding: 2rem; border-left: 5px solid #d4af37; border-radius: 8px;">
+                <p style="margin-top: 0;"><strong>You've got equity. You're tired of maintaining it. Something needs to change.</strong></p>
+                
+                <p>The market is strong. Your home won't get any easier to manage. Life's too short to spend it on a house you've outgrown.</p>
+                
+                <p style="margin-bottom: 0;">You don't have to decide today. But take the quiz and see what's possible.</p>
             </div>
-            
-            <p style="margin-top: 2rem;"><strong>The point:</strong> You don't have to do everything. And you probably shouldn't. James helps you make a smart list—the improvements that matter, the ones to skip, and the ones that don't exist (because they weren't worth worrying about in the first place).</p>
-            
-            <p>You'll feel better, spend less, and still sell your home for what it's worth.</p>
         </div>
         
         <!-- Case Studies -->
@@ -883,36 +871,13 @@
             <p style="font-size: 0.95rem; margin-top: 1.5rem;">Available to talk Monday–Friday, 9am–6pm MST</p>
         </div>
         
-        <!-- About James -->
+        <!-- About James (Short) -->
         <div class="content-block">
-            <h2>About James Taylor</h2>
+            <h2>Why Work With James?</h2>
             
-            <h3 style="font-size: 2rem; color: #1a3a66; font-weight: bold; margin-top: 0;">Licensed Since 2009. Serving the Front Range.</h3>
+            <p>15 years serving Boulder County. 120+ transactions. $70M+ in sales. And most importantly: he listens. He doesn't push you toward a sale—he helps you understand what makes sense for YOUR life.</p>
             
-            <p>Expert real estate guidance for buyers and sellers across Boulder County and the greater Denver metro area.</p>
-            
-            <div class="stats-section" style="background: linear-gradient(135deg, #e8f0f8 0%, #f0f5fb 100%); margin: 2rem 0; padding: 2rem; border-radius: 8px; border: 2px solid #1a3a66;">
-                <div class="stats">
-                    <div>
-                        <div class="stat" style="color: #1a3a66;">120+</div>
-                        <div class="stat-label">Transactions</div>
-                    </div>
-                    <div>
-                        <div class="stat" style="color: #2c5aa0;">$70M+</div>
-                        <div class="stat-label">Sales Volume</div>
-                    </div>
-                    <div>
-                        <div class="stat" style="color: #1a7f7f;">5.0★</div>
-                        <div class="stat-label">Client Rating</div>
-                    </div>
-                </div>
-            </div>
-            
-            <p style="font-size: 1.15rem; font-weight: bold; color: #0f2340;">A commitment to personalized service.</p>
-            
-            <p>James doesn't believe in one-size-fits-all solutions. He listens to your situation, understands your goals, and helps you make the decision that's right for YOU—not what's easiest for him or what the market is doing.</p>
-            
-            <p>With 15 years of experience in Boulder County, he knows the market, knows the neighborhoods, and knows how to help homeowners navigate complex decisions with clarity and confidence.</p>
+            <p style="font-size: 1.1rem; font-weight: bold; color: #1a3a66; margin-top: 2rem;">Ready to talk? Call James at <a href="tel:7203406743" style="color: #1a3a66; text-decoration: none;">720-340-6743</a> for a free, no-obligation conversation.</p>
         </div>
         
         <!-- Form -->
@@ -975,7 +940,7 @@
     
     <script>
         // Set total questions
-        document.getElementById('totalQuestions').textContent = '5';
+        document.getElementById('totalQuestions').textContent = '3';
         
         // Update progress bar when user selects an answer
         const radioButtons = document.querySelectorAll('input[type="radio"]');
@@ -984,7 +949,7 @@
         });
         
         function updateProgress() {
-            const totalQuestions = 5;
+            const totalQuestions = 3;
             const answeredQuestions = document.querySelectorAll('input[type="radio"]:checked').length;
             const progress = (answeredQuestions / totalQuestions) * 100;
             document.getElementById('progressFill').style.width = progress + '%';
@@ -994,90 +959,46 @@
         function showResults() {
             const priority = document.querySelector('input[name="priority"]:checked')?.value;
             const timeline = document.querySelector('input[name="timeline"]:checked')?.value;
-            const condition = document.querySelector('input[name="condition"]:checked')?.value;
-            const ownership = document.querySelector('input[name="ownership"]:checked')?.value;
             const concern = document.querySelector('input[name="concern"]:checked')?.value;
             const resultBox = document.getElementById('resultBox');
             const resultText = document.getElementById('resultText');
             
-            if (!priority || !timeline || !condition || !ownership || !concern) {
+            if (!priority || !timeline || !concern) {
                 alert('Please answer all questions');
                 return;
             }
             
             // Submit quiz data via email
-            submitQuizData(priority, timeline, condition, ownership, concern);
+            submitQuizData(priority, timeline, concern);
             
-            // Generate goal text
-            let goalText = '';
-            if (priority === 'cash') {
-                goalText = 'Maximize Profit';
-            } else if (priority === 'income') {
-                goalText = 'Create Income';
-            } else if (priority === 'legacy') {
-                goalText = 'Help Your Family';
-            } else if (priority === 'simplify') {
-                goalText = 'Simplify Life';
+            let readiness = '';
+            let recommendation = '';
+            
+            // Determine readiness level
+            if (priority === 'tired' && (timeline === 'soon' || timeline === 'eventually')) {
+                readiness = 'You\'re Ready';
+                recommendation = 'You\'ve clearly thought about this. It\'s time to talk seriously about your options. A conversation with James will help you move forward.';
+            } else if (priority === 'tired' && timeline === 'exploring') {
+                readiness = 'Getting Ready';
+                recommendation = 'You know you want out, you just haven\'t set a timeline yet. That\'s fine. Let James show you what\'s possible when you\'re ready.';
+            } else if (priority === 'neutral') {
+                readiness = 'On the Fence';
+                recommendation = 'You\'re not unhappy, but you\'re not excited either. A free consultation can clarify whether moving makes sense for your situation.';
+            } else if (priority === 'happy') {
+                readiness = 'Happy Where You Are';
+                recommendation = 'That\'s great! If that changes, you know where to find James. For now, enjoy your home.';
             }
-            
-            // Generate timeline text
-            let timelineText = '';
-            let actionItems = [];
-            if (timeline === '6months') {
-                timelineText = '6 Months — Start Prepping Now';
-                actionItems = [
-                    'Get a home inspection (know what needs fixing)',
-                    'Research comparable homes in your target area',
-                    'Start packing non-essentials',
-                    'Think about what you want in your next home'
-                ];
-            } else if (timeline === '1year') {
-                timelineText = '1 Year — Perfect Window';
-                actionItems = [
-                    'Start visualizing your next chapter',
-                    'Research neighborhoods you\'re considering',
-                    'Get your home professionally appraised',
-                    'Explore financing options for your next purchase'
-                ];
-            } else if (timeline === '2years') {
-                timelineText = '2-3 Years — Plenty of Time';
-                actionItems = [
-                    'Watch market trends (don\'t panic, you have time)',
-                    'Explore different neighborhoods without pressure',
-                    'Make selective improvements if they truly matter',
-                    'Plan the lifestyle you want in your next home'
-                ];
-            } else if (timeline === 'exploring') {
-                timelineText = 'Just Exploring — No Rush';
-                actionItems = [
-                    'Start asking yourself: What would simplify my life?',
-                    'Talk to friends who\'ve downsized (learn from them)',
-                    'Research what\'s available in your price range',
-                    'Schedule a conversation with James (no obligation)'
-                ];
-            }
-            
-            let actionHTML = actionItems.map(item => `<li>${item}</li>`).join('');
             
             let message = `
-                <div class="result-bubble header">Great! Here's the Plan...</div>
+                <div class="result-bubble header">${readiness}</div>
                 
                 <div class="result-bubble">
-                    <strong>GOAL: ${goalText}</strong>
-                </div>
-                
-                <div class="result-bubble">
-                    <strong>Timeline: ${timelineText}</strong>
-                </div>
-                
-                <div class="result-bubble">
-                    <strong>Next Steps:</strong>
-                    <ul>${actionHTML}</ul>
+                    <strong>${recommendation}</strong>
                 </div>
                 
                 <div class="result-bubble cta">
-                    <p>Ready to move forward?</p>
-                    <p><strong>Call James for a free, no-obligation consultation.</strong></p>
+                    <p><strong>Ready to explore your options?</strong></p>
+                    <p>Call James for a free, no-obligation conversation about your home and your future.</p>
                     <a href="tel:7203406743" class="phone">720-340-6743</a>
                 </div>
             `;
@@ -1087,16 +1008,14 @@
             resultBox.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
         }
         
-        function submitQuizData(priority, timeline, condition, ownership, concern) {
+        function submitQuizData(priority, timeline, concern) {
             // Create form data to submit quiz responses
             const formData = new FormData();
-            formData.append('_subject', 'New Quiz Submission - Exit Strategy');
-            formData.append('Quiz Source', 'Exit Strategy Quiz');
-            formData.append('Priority/Goal', priority);
+            formData.append('_subject', 'New Quiz Submission - BoCoMove');
+            formData.append('Quiz Source', 'BoCoMove - Should You Sell?');
+            formData.append('Maintenance Feelings', priority);
             formData.append('Timeline', timeline);
-            formData.append('Home Condition', condition);
-            formData.append('Years of Ownership', ownership);
-            formData.append('Main Concern', concern);
+            formData.append('Plans for Proceeds', concern);
             formData.append('_captcha', 'false');
             
             // Send to Formspree
