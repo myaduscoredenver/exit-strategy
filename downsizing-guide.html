@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Downsizing Guide | Homestead Real Estate</title>
+    <title>The Complete Downsizing Guide | Homestead Real Estate</title>
     <style>
         * {
             margin: 0;
@@ -18,59 +18,45 @@
             background: #f5f5f5;
         }
         
-        /* Header Navigation */
-        header {
-            background: white;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
+        /* Nav Bar */
+        .navbar {
+            background: #1a3a66;
             padding: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 2rem;
+            color: white;
         }
         
-        .logo {
-            height: 50px;
-            flex-shrink: 0;
-        }
-        
-        nav {
-            display: flex;
-            gap: 2rem;
-            flex: 1;
-        }
-        
-        nav a {
-            color: #1a3a66;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 1rem;
-            transition: color 0.3s ease;
-        }
-        
-        nav a:hover {
-            color: #2c5aa0;
-        }
-        
-        .header-right {
+        .navbar-left {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
-            flex-shrink: 0;
+            gap: 2rem;
         }
         
-        .phone-number {
-            color: #1a3a66;
-            font-weight: bold;
-            font-size: 1rem;
+        .navbar-logo {
+            height: 40px;
+        }
+        
+        .navbar-nav {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .navbar-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .navbar-nav a:hover {
+            color: #fbbf24;
+        }
+        
+        .navbar-right {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
         
         .free-consultation-btn {
@@ -80,8 +66,7 @@
             border-radius: 4px;
             text-decoration: none;
             font-weight: bold;
-            font-size: 0.95rem;
-            transition: background 0.3s ease;
+            font-size: 0.9rem;
         }
         
         .free-consultation-btn:hover {
@@ -90,9 +75,7 @@
         
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, rgba(26, 58, 102, 0.6) 0%, rgba(15, 35, 64, 0.7) 100%), url('longmont-aerial-cropped.jpg');
-            background-size: cover;
-            background-position: center;
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 50%, #0ea5e9 100%);
             color: white;
             padding: 4rem 1.5rem;
             text-align: center;
@@ -105,29 +88,31 @@
         }
         
         .hero .subheading {
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-            color: #e8f0f8;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-weight: normal;
         }
         
         .hero .description {
             font-size: 1.05rem;
-            color: #d0dce8;
-            max-width: 900px;
-            margin: 0 auto;
+            margin-bottom: 0;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
+        /* Container */
         .container {
             max-width: 900px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 2rem 1.5rem;
         }
         
         .section {
-            margin: 3rem 0;
+            margin-bottom: 3rem;
         }
         
-        .section-title {
+        .section-header {
             display: flex;
             align-items: center;
             gap: 1rem;
@@ -138,27 +123,19 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 45px;
-            height: 45px;
+            width: 50px;
+            height: 50px;
             background: #1a3a66;
             color: white;
             border-radius: 50%;
             font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
         
-        .section-title h2 {
+        .section-header h2 {
             font-size: 1.8rem;
             color: #1a3a66;
             margin: 0;
-        }
-        
-        .content-block {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
         }
         
         h3 {
@@ -171,28 +148,35 @@
         h4 {
             font-size: 1.1rem;
             color: #1a3a66;
-            font-weight: bold;
             margin: 1rem 0 0.5rem 0;
+            font-weight: bold;
         }
         
         p {
-            font-size: 1.05rem;
-            margin-bottom: 1.5rem;
+            font-size: 1rem;
+            margin-bottom: 1.2rem;
             line-height: 1.8;
         }
         
-        .highlight-box {
-            background: linear-gradient(135deg, #e8f0f8 0%, #f0f5fb 100%);
+        /* Content Block */
+        .content-block {
+            background: white;
             padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Highlight Box */
+        .highlight-box {
+            background: #e0e7ff;
+            padding: 1.5rem;
             border-left: 4px solid #1a3a66;
             border-radius: 4px;
             margin: 1.5rem 0;
         }
         
         .highlight-box h4 {
-            color: #1a3a66;
-            font-weight: bold;
-            margin-bottom: 1rem;
             margin-top: 0;
         }
         
@@ -215,37 +199,31 @@
             left: 0;
         }
         
-        /* Calculator */
-        .calculator-input {
-            display: flex;
-            gap: 1rem;
-            margin: 1rem 0;
+        /* Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
         }
         
-        input {
-            flex: 1;
-            padding: 0.8rem;
-            border: 2px solid #ddd;
+        .grid-item {
+            background: white;
+            padding: 1.5rem;
             border-radius: 4px;
-            font-size: 1rem;
+            border-left: 4px solid #1a3a66;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
         }
         
-        button {
-            padding: 0.8rem 2rem;
-            background: #fbbf24;
-            color: #1a3a66;
-            border: none;
-            border-radius: 4px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease;
+        .grid-item h4 {
+            margin-top: 0;
         }
         
-        button:hover {
-            background: #fcd34d;
+        .grid-item p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
         }
         
-        /* Grid layouts */
         .grid-4 {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
@@ -255,113 +233,300 @@
         
         .grid-4-item {
             background: white;
-            padding: 1rem;
+            padding: 1.5rem;
             border-radius: 4px;
-            text-align: center;
             border-top: 3px solid #1a3a66;
+            text-align: center;
         }
         
         .grid-4-item h4 {
-            margin-top: 0;
+            margin: 0 0 0.5rem 0;
             font-size: 1rem;
         }
         
         .grid-4-item p {
+            font-size: 0.9rem;
+            margin: 0;
+        }
+        
+        /* Grid 2 Large */
+        .grid-2-large {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .option-card {
+            padding: 2rem;
+            border-radius: 12px;
+            border: 3px solid;
+        }
+        
+        .option-card h4 {
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+        
+        .option-card p {
+            margin-bottom: 1rem;
+        }
+        
+        .blue-border {
+            background: #e0e7ff;
+            border-color: #6b9bff;
+        }
+        
+        .teal-border {
+            background: #ccf0f0;
+            border-color: #5ec8d8;
+        }
+        
+        .green-border {
+            background: #d1f0d8;
+            border-color: #7ec97f;
+        }
+        
+        .yellow-border {
+            background: #fef3cd;
+            border-color: #f5d547;
+        }
+        
+        /* James Says */
+        .james-says {
+            background: #fef3cd;
+            padding: 1.5rem;
+            border-left: 5px solid #d4a547;
+            border-radius: 4px;
+            margin: 2rem 0;
+        }
+        
+        .james-says h4 {
+            color: #1a3a66;
+            margin: 0 0 0.5rem 0;
+        }
+        
+        .james-says p {
+            color: #5a5a5a;
+            margin: 0;
             font-size: 0.95rem;
+        }
+        
+        /* Benefit Cards */
+        .benefit-card {
+            padding: 1.5rem;
+            border-radius: 8px;
+            border: 2px solid;
+        }
+        
+        .benefit-card h4 {
+            margin-top: 0;
+            margin-bottom: 1rem;
+            color: #1a3a66;
+        }
+        
+        .benefit-card p {
+            margin-bottom: 0.8rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .benefit-card p:last-child {
             margin-bottom: 0;
         }
         
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #0369a1 100%);
+        .green-bg {
+            background: #d1f0d8;
+            border-color: #7ec97f;
+        }
+        
+        .blue-bg {
+            background: #e0e7ff;
+            border-color: #6b9bff;
+        }
+        
+        .purple-bg {
+            background: #e8d5f2;
+            border-color: #b896d6;
+        }
+        
+        .yellow-bg {
+            background: #fef3cd;
+            border-color: #f5d547;
+        }
+        
+        /* Mistake Cards */
+        .mistake-card {
+            padding: 1.5rem;
+            border-radius: 4px;
+            border-left: 5px solid;
+            background: #fafaf8;
+        }
+        
+        .mistake-card h4 {
+            margin-top: 0;
+            margin-bottom: 0.8rem;
+            color: #1a3a66;
+        }
+        
+        .mistake-card p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        .red-border {
+            border-left-color: #dc2626;
+        }
+        
+        .orange-border {
+            border-left-color: #ea580c;
+        }
+        
+        .brown-border {
+            border-left-color: #8b6f47;
+        }
+        
+        .pink-border {
+            border-left-color: #ec4899;
+        }
+        
+        .gold-border {
+            border-left-color: #d4a574;
+        }
+        
+        .tan-border {
+            border-left-color: #c9a86a;
+        }
+        
+        /* Grid 3 */
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .benefit-summary {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border-top: 3px solid #1a3a66;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.08);
+        }
+        
+        .benefit-summary h4 {
+            margin: 0.5rem 0 0.8rem 0;
+            color: #1a3a66;
+        }
+        
+        .benefit-summary p {
+            margin: 0;
+            font-size: 0.95rem;
+        }
+        
+        /* Closing CTA */
+        .closing-cta {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
             color: white;
-            padding: 3rem 2.5rem;
-            border-radius: 12px;
+            padding: 3rem 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem 0 0 0;
+        }
+        
+        .closing-cta h2 {
+            color: white;
+            margin-top: 0;
+        }
+        
+        .closing-cta p {
+            color: #d0dce8;
+        }
+        
+        /* CTA Section */
+        .cta {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 8px;
             text-align: center;
             margin: 3rem 0;
         }
         
-        .cta-section h2 {
+        .cta h2 {
             color: white;
-            font-size: 2rem;
-            margin-bottom: 1rem;
+            margin-top: 0;
         }
         
-        .cta-section p {
+        .cta p {
             color: #d0dce8;
-            margin-bottom: 2rem;
-            font-size: 1.05rem;
         }
         
-        .schedule-btn {
+        .cta-button {
             display: inline-block;
-            background: #fbbf24;
+            background: white;
             color: #1a3a66;
-            padding: 1rem 2.5rem;
-            border-radius: 8px;
+            padding: 1rem 2rem;
             text-decoration: none;
             font-weight: bold;
-            font-size: 1.05rem;
-            transition: background 0.3s ease;
+            border-radius: 4px;
+            margin-top: 1rem;
         }
         
-        .schedule-btn:hover {
-            background: #fcd34d;
+        .cta-button:hover {
+            background: #f0f0f0;
         }
         
+        /* Footer */
         footer {
             background: #1a3a66;
-            color: white;
+            color: #b0c4e0;
             padding: 2rem;
             text-align: center;
+            font-size: 0.9rem;
             margin-top: 3rem;
         }
         
-        footer p {
-            font-size: 0.95rem;
-            margin: 0.5rem 0;
-            color: #b0c4e0;
-        }
-        
         @media (max-width: 768px) {
-            .grid-4 {
+            .grid-2, .grid-4, .grid-2-large, .grid-3 {
                 grid-template-columns: 1fr;
             }
-            nav {
-                display: none;
-            }
-            .hero h1 {
-                font-size: 2rem;
+            .navbar {
+                flex-direction: column;
+                gap: 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <img src="logo.png" alt="Homestead Real Estate LLC" class="logo">
-            <nav>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <div class="navbar-left">
+            <img src="logo.png" alt="Homestead Real Estate" class="navbar-logo">
+            <div class="navbar-nav">
                 <a href="index.html">Home</a>
                 <a href="downsizing-guide.html">Downsizing Guide</a>
                 <a href="index.html#consultation">Next Steps</a>
-            </nav>
-            <div class="header-right">
-                <span class="phone-number">720-340-6743</span>
-                <a href="#consultation" class="free-consultation-btn">Free Consultation</a>
             </div>
         </div>
-    </header>
+        <div class="navbar-right">
+            <a href="index.html#consultation" class="free-consultation-btn">Free Consultation</a>
+        </div>
+    </div>
     
+    <!-- Hero Section -->
     <div class="hero">
         <h1>The Complete Downsizing Guide</h1>
         <p class="subheading">A practical roadmap for Longmont homeowners ready to make the move</p>
-        <p class="description">From emotional readiness to financial planning to finding your perfect next home. Everything you need to know about downsizing on your terms.</p>
+        <p class="description">From emotional readiness to financial planning to finding your perfect next home</p>
     </div>
     
     <div class="container">
         <!-- Section 1 -->
         <div class="section">
-            <div class="section-title">
+            <div class="section-header">
                 <div class="section-number">1</div>
                 <h2>Is This the Right Time?</h2>
             </div>
@@ -381,253 +546,310 @@
                         <li>You're looking to unlock equity for retirement or other goals</li>
                     </ul>
                 </div>
+                
+                <h3>Common Fears & How to Overcome Them</h3>
+                
+                <div class="grid-2">
+                    <div class="grid-item">
+                        <h4>Fear: "I won't have space for family visits"</h4>
+                        <p>Today's smaller homes are better designed. Guest rooms, flexible spaces, and proximity to Airbnbs mean hosting is easier than ever.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>Fear: "I'll miss my home"</h4>
+                        <p>You're not losing memories—they travel with you. Your new space becomes the backdrop for this exciting chapter.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h4>Fear: "Downsizing will be overwhelming"</h4>
+                        <p>With a plan and timeline, it becomes manageable. Many clients find it liberating to let go of things they no longer need.</p>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Section 2: Equity Calculator -->
+        
+        <!-- Section 2 -->
         <div class="section">
-            <div class="section-title">
+            <div class="section-header">
                 <div class="section-number">2</div>
-                <h2>Know Your Numbers: The Equity Calculator</h2>
+                <h2>Know Your Numbers: Request a Free CMA</h2>
             </div>
             
             <div class="content-block">
-                <p>Understand what your home is worth today and how much equity you've built. Get a professional estimate based on Longmont market data.</p>
+                <p>Before making any decisions, understand what your home is worth today and how much equity you've built. Request a free Comparative Market Analysis (CMA) and we'll provide you with a professional estimate based on recent Longmont sales.</p>
                 
-                <h3>Your Longmont Address</h3>
-                <div class="calculator-input">
-                    <input type="text" id="addressInput" placeholder="e.g., 1345 Lincoln St">
-                    <button onclick="searchAddress()">Calculate Equity</button>
-                </div>
-                <p style="font-size: 0.95rem; color: #666;">Don't see your address? Call 720-340-6743 for a free valuation.</p>
+                <form style="max-width: 600px; margin: 2rem auto;">
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: #1a3a66;">Your Name *</label>
+                        <input type="text" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px; font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: #1a3a66;">Phone Number *</label>
+                        <input type="tel" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px; font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: #1a3a66;">Email Address *</label>
+                        <input type="email" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px; font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: #1a3a66;">Your Home Address *</label>
+                        <input type="text" placeholder="123 Main St, Longmont, CO" required style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px; font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: #1a3a66;">Year Built</label>
+                        <input type="text" placeholder="e.g., 2005" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px; font-size: 1rem;">
+                    </div>
+                    
+                    <div style="margin-bottom: 1.5rem;">
+                        <label style="display: block; font-weight: bold; margin-bottom: 0.5rem; color: #1a3a66;">Square Footage</label>
+                        <input type="text" placeholder="e.g., 2,500 sq ft" style="width: 100%; padding: 0.8rem; border: 2px solid #ddd; border-radius: 4px; font-size: 1rem;">
+                    </div>
+                    
+                    <button type="submit" style="width: 100%; padding: 1rem; background: #fbbf24; color: #1a3a66; border: none; border-radius: 4px; font-weight: bold; font-size: 1rem; cursor: pointer;">Request Your Free CMA</button>
+                </form>
+                
+                <p style="text-align: center; font-size: 0.9rem; color: #666; margin-top: 1rem;">We'll send you a detailed market analysis via email within 24 hours.</p>
             </div>
         </div>
-
+        
         <!-- Section 3 -->
         <div class="section">
-            <div class="section-title">
+            <div class="section-header">
                 <div class="section-number">3</div>
                 <h2>Downsizing Options for Your Next Chapter</h2>
             </div>
             
-            <div class="grid-4">
-                <div class="grid-4-item">
+            <div class="grid-2-large">
+                <div class="option-card blue-border">
                     <h4>Active Adult Communities (55+)</h4>
                     <p>Purpose-built for your lifestyle. Lower maintenance, on-site amenities, and built-in community.</p>
+                    <ul style="list-style: none; padding: 0; margin: 1rem 0 0 0;">
+                        <li style="padding-left: 1.5rem; margin-bottom: 0.6rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> No stairs, single-level living</li>
+                        <li style="padding-left: 1.5rem; margin-bottom: 0.6rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Maintenance included</li>
+                        <li style="padding-left: 1.5rem; margin-bottom: 0.6rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Social events & amenities</li>
+                        <li style="padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Security & peace of mind</li>
+                    </ul>
                 </div>
-                <div class="grid-4-item">
+                <div class="option-card teal-border">
                     <h4>Townhomes & Condos</h4>
                     <p>Smaller footprint, lower HOA costs than active communities, more independence.</p>
+                    <ul style="list-style: none; padding: 0; margin: 1rem 0 0 0;">
+                        <li style="padding-left: 1.5rem; margin-bottom: 0.6rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Shared maintenance</li>
+                        <li style="padding-left: 1.5rem; margin-bottom: 0.6rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> More affordable</li>
+                        <li style="padding-left: 1.5rem; margin-bottom: 0.6rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Walkable neighborhoods</li>
+                        <li style="padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Good resale value</li>
+                    </ul>
                 </div>
-                <div class="grid-4-item">
+                <div class="option-card green-border">
                     <h4>Smaller Single-Family Homes</h4>
                     <p>Stay in your neighborhood with less square footage and property to manage.</p>
+                    <ul style="list-style: none; padding: 0; margin: 1rem 0 0 0;">
+                        <li style="padding-left: 1.5rem; margin-bottom: 0.6rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Neighborhood familiarity</li>
+                        <li style="padding-left: 1.5rem; margin-bottom: 0.6rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> More privacy</li>
+                        <li style="padding-left: 1.5rem; margin-bottom: 0.6rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Outdoor space (smaller scale)</li>
+                        <li style="padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Lower taxes than larger homes</li>
+                    </ul>
                 </div>
-                <div class="grid-4-item">
+                <div class="option-card yellow-border">
                     <h4>Senior Living Communities</h4>
-                    <p>Full-service options from independent living to assisted living as needs change.</p>
+                    <p>Full-service options from assisted living to memory care as needs change.</p>
+                    <ul style="list-style: none; padding: 0; margin: 1rem 0 0 0;">
+                        <li style="padding-left: 1.5rem; margin-bottom: 0.6rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Healthcare support included</li>
+                        <li style="padding-left: 1.5rem; margin-bottom: 0.6rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Meals & activities</li>
+                        <li style="padding-left: 1.5rem; margin-bottom: 0.6rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Peace of mind</li>
+                        <li style="padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Continuum of care</li>
+                    </ul>
                 </div>
             </div>
         </div>
-
+        
         <!-- Section 4 -->
         <div class="section">
-            <div class="section-title">
+            <div class="section-header">
                 <div class="section-number">4</div>
                 <h2>Preparing Your Home for Sale</h2>
             </div>
             
             <div class="content-block">
-                <h3>Strategic Improvements (Not Overhauls)</h3>
+                <h3>🏠 Strategic Improvements (Not Overhauls)</h3>
                 <p>Your goal isn't perfection—it's presenting potential. Focus on what matters most to today's buyers.</p>
                 
-                <div class="highlight-box">
-                    <h4>High-Impact Updates ($$$)</h4>
-                    <ul>
-                        <li>Kitchen refresh or update</li>
-                        <li>Bathroom modernization</li>
-                        <li>Fresh paint throughout</li>
-                        <li>New flooring (key areas)</li>
-                    </ul>
+                <div class="grid-2">
+                    <div class="grid-item">
+                        <h4>High-Impact Updates ($$$)</h4>
+                        <ul style="list-style: none; padding-left: 0; margin: 0;">
+                            <li style="padding-left: 1.5rem; margin-bottom: 0.5rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Kitchen refresh or update</li>
+                            <li style="padding-left: 1.5rem; margin-bottom: 0.5rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Bathroom modernization</li>
+                            <li style="padding-left: 1.5rem; margin-bottom: 0.5rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Fresh paint throughout</li>
+                            <li style="padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> New flooring (key areas)</li>
+                        </ul>
+                    </div>
+                    <div class="grid-item">
+                        <h4>Lower-Cost Impact ($)</h4>
+                        <ul style="list-style: none; padding-left: 0; margin: 0;">
+                            <li style="padding-left: 1.5rem; margin-bottom: 0.5rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Professional cleaning</li>
+                            <li style="padding-left: 1.5rem; margin-bottom: 0.5rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Landscaping & curb appeal</li>
+                            <li style="padding-left: 1.5rem; margin-bottom: 0.5rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Light fixtures updated</li>
+                            <li style="padding-left: 1.5rem; position: relative;"><span style="position: absolute; left: 0;">✓</span> Remove clutter (declutter)</li>
+                        </ul>
+                    </div>
                 </div>
-
-                <div class="highlight-box">
-                    <h4>Lower-Cost Impact ($)</h4>
-                    <ul>
-                        <li>Professional cleaning</li>
-                        <li>Landscaping & curb appeal</li>
-                        <li>Light fixtures updated</li>
-                        <li>Remove clutter (declutter)</li>
-                    </ul>
+                
+                <div class="james-says">
+                    <div style="display: flex; gap: 1rem;">
+                        <div style="flex-shrink: 0;">
+                            <div style="width: 50px; height: 50px; background: #1a3a66; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.5rem;">J</div>
+                        </div>
+                        <div>
+                            <h4 style="margin-top: 0;">James Says: The Kitchen Reality</h4>
+                            <p style="margin: 0;">Today's buyers spend more time in the kitchen than any other room. A dated kitchen doesn't mean your home doesn't sell—it means you might sell for less than you could. Even a modest kitchen refresh can add confidence for the next owner. We can explore ROI-smart options together.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-
-        <!-- Section 5 -->
+        
+        <!-- Section 5-9 -->
         <div class="section">
-            <div class="section-title">
+            <div class="section-header">
                 <div class="section-number">5</div>
                 <h2>Tax Implications & Capital Gains</h2>
             </div>
-            
             <div class="content-block">
-                <div class="highlight-box">
-                    <h4 style="margin-top: 0;">Section 121 Exclusion (The Big Benefit)</h4>
-                    <p>If you've lived in your home for at least 2 of the last 5 years, you can exclude up to <strong>$250,000</strong> (single) or <strong>$500,000</strong> (married filing jointly) of capital gains from federal income tax.</p>
-                    <p><strong>Important:</strong> I am not a tax consultant. Consult with your accountant or a tax professional to understand your specific situation before selling.</p>
-                </div>
+                <p>Understand your tax benefits when selling your home.</p>
             </div>
         </div>
-
-        <!-- Section 6 -->
+        
         <div class="section">
-            <div class="section-title">
+            <div class="section-header">
                 <div class="section-number">6</div>
                 <h2>Timeline & Selling Strategy</h2>
             </div>
-            
             <div class="content-block">
-                <h3>A Typical Selling Timeline</h3>
-                <p>From consultation to closing typically takes 4-5 months. The exact timeline depends on market conditions and how quickly you prepare your home.</p>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li><strong>Week 1-2:</strong> Free consultation and professional valuation</li>
-                    <li><strong>Week 2-4:</strong> Prepare, stage, and professional cleaning</li>
-                    <li><strong>Week 5:</strong> List and market your home</li>
-                    <li><strong>Week 6-12:</strong> Showings, negotiations, and offer acceptance</li>
-                    <li><strong>Week 13-16:</strong> Inspection, appraisal, and addressing concerns</li>
-                    <li><strong>Week 17-18:</strong> Final walkthrough and closing</li>
-                </ul>
+                <p>From consultation to closing typically takes 4-5 months.</p>
             </div>
         </div>
-
-        <!-- Section 7 -->
+        
         <div class="section">
-            <div class="section-title">
+            <div class="section-header">
                 <div class="section-number">7</div>
                 <h2>The Real Benefit: Your New Lifestyle</h2>
             </div>
-            
             <div class="content-block">
-                <h3>Financial Freedom</h3>
-                <p>Lower property taxes on a smaller home, reduced utilities, minimal maintenance costs, and extra cash for retirement or travel.</p>
-                
-                <h3>Time & Energy</h3>
-                <p>No yard work, less cleaning, no major repairs, and more time for what matters—family, hobbies, and travel.</p>
-                
-                <h3>Community & Connection</h3>
-                <p>Built-in community in active adult or condo communities, social events nearby, walkable neighborhoods, and peace of mind with security and shared services.</p>
+                <div class="grid-2-large">
+                    <div class="benefit-card green-bg">
+                        <h4>💰 Financial Freedom</h4>
+                        <p><strong>Lower property taxes</strong> on a smaller home</p>
+                        <p><strong>Reduced utilities</strong> year-round</p>
+                        <p><strong>Minimal maintenance costs</strong> or included HOA</p>
+                        <p><strong>Extra cash</strong> for travel, family, or retirement</p>
+                    </div>
+                    <div class="benefit-card blue-bg">
+                        <h4>🎯 Time & Energy</h4>
+                        <p><strong>No yard work</strong> or minimal landscape maintenance</p>
+                        <p><strong>Less cleaning</strong> and fewer rooms to manage</p>
+                        <p><strong>No major repairs</strong> or unexpected expenses</p>
+                        <p><strong>More time</strong> for what matters—family, hobbies, travel</p>
+                    </div>
+                    <div class="benefit-card purple-bg">
+                        <h4>🌍 Adventure & Flexibility</h4>
+                        <p><strong>Extended travel</strong> without home worries</p>
+                        <p><strong>Snowbird options</strong> without managing two properties</p>
+                        <p><strong>Freedom to relocate</strong> to be near family</p>
+                        <p><strong>Less responsibility</strong>, more spontaneity</p>
+                    </div>
+                    <div class="benefit-card yellow-bg">
+                        <h4>👥 Community & Connection</h4>
+                        <p><strong>Built-in community</strong> in active adult or condo communities</p>
+                        <p><strong>Social events</strong> and activities nearby</p>
+                        <p><strong>Walkable neighborhoods</strong> in Longmont</p>
+                        <p><strong>Peace of mind</strong> with security and shared services</p>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Section 8 -->
+        
         <div class="section">
-            <div class="section-title">
+            <div class="section-header">
                 <div class="section-number">8</div>
                 <h2>Avoid These Common Mistakes</h2>
             </div>
-            
             <div class="content-block">
-                <h3>❌ Pricing Too High</h3>
-                <p>Overpricing is the #1 reason homes sit on the market. We'll help you price for the current market.</p>
-                
-                <h3>❌ Not Preparing the House</h3>
-                <p>First impressions matter. Unprepared homes get fewer showings and lower offers.</p>
-                
-                <h3>❌ Rushing the Timeline</h3>
-                <p>Panic selling leads to poor outcomes. Give yourself 3-6 months to prepare and market properly.</p>
+                <div class="grid-2-large">
+                    <div class="mistake-card red-border">
+                        <h4>❌ Pricing Too High</h4>
+                        <p>Overpricing is the #1 reason homes sit on the market. We'll help you price for the current market—not the one you wish existed.</p>
+                    </div>
+                    <div class="mistake-card orange-border">
+                        <h4>❌ Not Preparing the House</h4>
+                        <p>First impressions matter. Unprepared homes get fewer showings and lower offers. Budget for staging and minor updates.</p>
+                    </div>
+                    <div class="mistake-card brown-border">
+                        <h4>❌ Rushing the Timeline</h4>
+                        <p>Panic selling leads to poor outcomes. Give yourself 3-6 months to prepare and market properly for the best result.</p>
+                    </div>
+                    <div class="mistake-card pink-border">
+                        <h4>❌ Making Major Renovations</h4>
+                        <p>Expensive remodels often don't pay back 100%. Focus on ROI-smart updates instead of perfecting the home for the next owner.</p>
+                    </div>
+                    <div class="mistake-card gold-border">
+                        <h4>⚠️ Being Emotionally Attached</h4>
+                        <p>This is your home, but it's now a product for sale. Listen to feedback and be willing to make strategic changes for buyers.</p>
+                    </div>
+                    <div class="mistake-card tan-border">
+                        <h4>⚠️ Not Being Transparent</h4>
+                        <p>Disclose known issues upfront. Honesty builds trust, speeds up the process, and prevents legal headaches later.</p>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Section 9 -->
-        <div class="section" id="consultation">
-            <div class="section-title">
+        
+        <div class="section">
+            <div class="section-header">
                 <div class="section-number">9</div>
                 <h2>Ready to Take the Next Step?</h2>
             </div>
             
-            <div class="cta-section">
+            <div class="cta">
                 <h2>Let's Talk About Your Downsizing Journey</h2>
-                <p>I can help you organize your thoughts, answer your questions, and give you a clear path toward preparing your home for sale.</p>
-                <a href="tel:7203406743" class="schedule-btn">📞 Call 720-340-6743</a>
+                <p>I can help you organize your thoughts, answer your questions, and give you a clear path toward preparing your home for sale. This is no-pressure, completely confidential, and designed just for you.</p>
+                <a href="index.html#consultation" class="cta-button">Schedule Your Free Consultation</a>
+            </div>
+            
+            <div class="grid-3">
+                <div class="benefit-summary">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">📋</div>
+                    <h4>Home Valuation</h4>
+                    <p>I'll provide a professional estimate of your home's current market value based on recent Longmont comparables.</p>
+                </div>
+                <div class="benefit-summary">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">💬</div>
+                    <h4>Answer Your Questions</h4>
+                    <p>No question is too small. I'll address your concerns about selling, moving, timing, and what to expect.</p>
+                </div>
+                <div class="benefit-summary">
+                    <div style="font-size: 2rem; margin-bottom: 0.5rem;">🗺️</div>
+                    <h4>Create Your Plan</h4>
+                    <p>Together, we'll map out a realistic timeline and strategy for your specific situation.</p>
+                </div>
+            </div>
+            
+            <div class="closing-cta">
+                <h2>Let's Make Your Next Move Easier</h2>
+                <p>Downsizing isn't about settling. It's about simplifying, freeing up resources, and starting an exciting new chapter. I'm here to guide you every step of the way.</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="tel:7203406743" style="display: inline-block; background: #fbbf24; color: #1a3a66; padding: 0.8rem 1.5rem; text-decoration: none; font-weight: bold; border-radius: 4px;">Call Me Today</a>
+                    <a href="index.html#consultation" style="display: inline-block; background: white; color: #1a3a66; padding: 0.8rem 1.5rem; text-decoration: none; font-weight: bold; border-radius: 4px; border: 2px solid white;">Schedule Online</a>
+                </div>
             </div>
         </div>
     </div>
-
+    
     <footer>
         <p>© 2026 Homestead Real Estate, LLC. All rights reserved.</p>
         <p>Longmont, Colorado | 17 years of local real estate expertise</p>
     </footer>
-
-    <script>
-        const propertyDatabase = [
-            { address: "1345 Lincoln St", purchasePrice: 195000, purchaseDate: "2011" },
-            { address: "1234 Pearl St", purchasePrice: 280000, purchaseDate: "2008" },
-        ];
-
-        function getAppreciationRate(year) {
-            if (year >= 2009 && year <= 2013) return 0.04;
-            if (year >= 2014 && year <= 2019) return 0.08;
-            if (year === 2020) return 0.15;
-            if (year === 2021) return 0.07;
-            if (year === 2022) return 0.05;
-            if (year === 2023) return -0.03;
-            if (year === 2024) return -0.02;
-            if (year === 2025) return 0.00;
-            if (year === 2026) return 0.00;
-            return 0.04;
-        }
-
-        function calculateEquity(purchasePrice, purchaseDate) {
-            const year = parseInt(purchaseDate);
-            const currentYear = 2026;
-            const yearsOwned = currentYear - year;
-
-            let value = purchasePrice;
-            for (let i = 0; i < yearsOwned; i++) {
-                const yearOfOwnership = year + i;
-                const rate = getAppreciationRate(yearOfOwnership);
-                value *= (1 + rate);
-            }
-
-            const equity = value - purchasePrice;
-
-            return {
-                originalPrice: purchasePrice,
-                currentValue: Math.round(value),
-                equity: Math.round(equity),
-                yearsOwned: yearsOwned
-            };
-        }
-
-        function formatCurrency(value) {
-            return new Intl.NumberFormat('en-US', {
-                style: 'currency',
-                currency: 'USD',
-                minimumFractionDigits: 0,
-                maximumFractionDigits: 0,
-            }).format(value);
-        }
-
-        function searchAddress() {
-            const addressInput = document.getElementById('addressInput');
-            const address = addressInput.value.trim();
-            
-            if (!address) {
-                alert('Please enter an address');
-                return;
-            }
-
-            const property = propertyDatabase.find(p => 
-                p.address.toLowerCase().includes(address.toLowerCase())
-            );
-
-            if (property) {
-                const result = calculateEquity(property.purchasePrice, property.purchaseDate);
-                alert(`Your Estimated Home Value: ${formatCurrency(result.currentValue)}\n\nYou Paid: ${formatCurrency(result.originalPrice)}\nYears Owned: ${result.yearsOwned}\n\nEquity Built: ${formatCurrency(result.equity)}`);
-            } else {
-                alert('Address not found. Call 720-340-6743 for a free valuation.');
-            }
-        }
-    </script>
 </body>
 </html>
